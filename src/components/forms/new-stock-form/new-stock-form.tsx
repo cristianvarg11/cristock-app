@@ -15,6 +15,8 @@ export const NewStockForm = () => {
 
   return (
     <Card className="w-full p-5">
+      <h1 className="text-2xl font-bold mb-6 text-center">Add your new stock 🤑</h1>
+
       <Form {...newStockFormInstance}>
         <AsyncSelectInput
           name="newStockSymbol"

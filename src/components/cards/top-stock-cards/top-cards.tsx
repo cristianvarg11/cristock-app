@@ -1,6 +1,5 @@
 "use client";
 import { useHandleTopStockCards } from "./handlers/handle-top-stock-cards";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   CarouselPrevious,
   CarouselContent,
@@ -9,6 +8,7 @@ import {
   Carousel,
 } from "@/components/ui/carousel";
 import { StockCard } from "./stock-card";
+import { TopCardsSkeleton } from "./top-cards-skeleton";
 
 export const TopCards = () => {
   const { currentSavedStocks, deleteStock } = useHandleTopStockCards();
@@ -16,8 +16,7 @@ export const TopCards = () => {
   if (currentSavedStocks?.length === 0) {
     return (
       <div className="w-full">
-        <span className="text-muted-foreground relative">No stocks found</span>
-        <Skeleton className="h-40" />
+        <TopCardsSkeleton/>
       </div>
     );
   }
