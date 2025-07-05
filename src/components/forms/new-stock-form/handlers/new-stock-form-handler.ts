@@ -53,7 +53,10 @@ export const useNewStockFormHandler = () => {
 
     // Reset form
     newStockFormInstance.reset({
-      newStockSymbol: undefined,
+      newStockSymbol: {
+        value: "",
+        label: undefined,
+      },
       newStockAlertPrice: "",
     });
   };
