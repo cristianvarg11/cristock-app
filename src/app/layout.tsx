@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import ToastProvider from "@/shared/providers/toastify-provider";
+import { Header } from "@/components/ui/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,8 @@ export default function RootLayout({
   return (
     <html>
       <body>
+        <Header/>
+
         <ToastProvider>{children}</ToastProvider>
       </body>
     </html>

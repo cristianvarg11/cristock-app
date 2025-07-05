@@ -12,6 +12,7 @@ import {
 } from "recharts";
 
 import { useStockStore } from "@/shared/stores/stocks-store";
+import { BarChartSkeleton } from "./bar-char-skeleton";
 
 export function StockBarChart() {
   const { currentSavedStocks } = useStockStore();
@@ -24,9 +25,21 @@ export function StockBarChart() {
     symbol: stock.symbol,
   }));
 
+  if (chartData.length === 0) {
+    return (
+    <div className="flex flex-col items-center justify-center p-8">
+      <div className="w-full">
+        <h1 className="text-2xl font-bold mb-6 text-center">Stocks Chart 📊</h1>
+        <BarChartSkeleton />
+      </div>
+    </div>
+    );
+  }
+
   return (
     <div className="w-full p-4 border rounded-lg bg-background">
-      <h2 className="text-xl font-semibold mb-4">Stock Price Comparison</h2>
+        <h1 className="text-2xl font-bold mb-6 text-center">Stocks Chart 📊</h1>
+
       <div className="h-[400px]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
