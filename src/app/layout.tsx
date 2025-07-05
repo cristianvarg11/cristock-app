@@ -7,6 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "CRISTOCKS",
   description: "Crypto Stocks by https://github.com/cristianvarg11",
+   manifest: '/manifest.json',
 };
 
 export default function RootLayout({
